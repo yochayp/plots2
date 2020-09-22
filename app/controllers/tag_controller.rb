@@ -127,7 +127,7 @@ class TagController < ApplicationController
       end
     end
 
-    @pagy, nodes = pagy(nodes.order(order_by), items: 24)
+    @pagy, nodes = pagy(nodes.order(order_by), items: 24, count: nodes.count)
     @paginated = true
 
     @qids = Node.questions.where(status: 1)
